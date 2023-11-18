@@ -66,9 +66,10 @@ static Random random = new Random();
                             
                         case 2:
                             diferencia(set1,set2);
-                            imprimir(diferencia);
+                            imprimirpunt(diferencia(set1,set2));
                             break;
                     }
+                    System.out.println("");
                     System.out.println("ok1");
                     break;
                 
@@ -140,27 +141,71 @@ static Random random = new Random();
                 continue;
             }
             else{
-                System.out.println("["+a[i]+"]");
+                System.out.print("["+a[i]+"]");
             }
         }
     }
     public static char [] diferencia (char [] a, char [] b){
+        int cont = 0;
+        int contadur = 0;
         int control = 0;
-        char temporal [] = new char [a.length];
+        char temporal [] = new char [a.length + b.length];
         for (int y = 0; y < temporal.length; y++){
             temporal [y] = '/';
         }
         for (int i = 0; i < a.length; i++){
-            control =0;
             for (int j = 0; j < b.length; j++){
                 if (a [i] == b [j]){
                     control++;
                 }
             }
             if ( control == 0){
-                temporal[1] = a[i];
+                temporal[cont] = a[i];
+                cont++;
+                control =0;
+            }else{
+                control = 0;
+                cont++;
             }
         }
+        for (int i = 0; i < b.length; i++){
+            for (int j = 0; j < a.length; j++){
+                if (b [i] == a [j]){
+                    control++;
+                }
+            }
+            if ( control == 0){
+                temporal[cont] = b[i];
+                cont++;
+                control =0;
+            }else{
+                control = 0;
+                cont++;
+            }
+        }
+        for (int i = 0; i< temporal.length; i++){
+            for (int j = 0; j < a.length; j++){
+                if (temporal [i] == a [j]){
+                    contadur++;
+                    if (contadur > 1){
+                        temporal[j]= '/';
+                    }
+                }
+            }
+            contadur = 0;
+        }
+        for (int i = 0; i< temporal.length; i++){
+            for (int j = 0; j < b.length; j++){
+                if (temporal [i] == b [j]){
+                    contadur++;
+                    if (contadur > 1){
+                        temporal[j]= '/';
+                    }
+                }
+            }
+            contadur = 0;
+        }
+        
         return temporal;
                 
     }
