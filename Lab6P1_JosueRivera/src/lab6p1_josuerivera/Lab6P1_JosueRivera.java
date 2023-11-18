@@ -20,7 +20,7 @@ static Random random = new Random();
     public static void main(String[] args) {
         System.out.println("//////menu//////");
         System.out.println("introduzca su opcion");
-        System.out.println("1. ");
+        System.out.println("1. conjuntos");
         System.out.println("2. cuantos primos tienes?");
         int opcion = sc.nextInt();
         
@@ -29,7 +29,7 @@ static Random random = new Random();
                     + "introduzca una de las tresopciones");
             System.out.println("//////menu//////");
             System.out.println("introduzca su opcion");
-            System.out.println("1. ");
+            System.out.println("1. conjuntos");
             System.out.println("2.cuantos primos tienes? ");
             opcion = sc.nextInt();
         }
@@ -83,8 +83,11 @@ static Random random = new Random();
                     int set [] = new int [size];
                     set = genRandArray(size,menor,mayor);
                     System.out.print("Arreglo generado:");
+                    System.out.println(" ");
                     imprimir(set);
+                    System.out.println(" ");
                     System.out.println("numero de divisores primos:");
+                    System.out.println(" ");
                     int primos [] = new int [size];
                     primos = gettotalprimecount(set);
                     System.out.println(" ");
@@ -96,7 +99,7 @@ static Random random = new Random();
             }
             System.out.println("//////menu//////");
             System.out.println("introduzca su opcion");
-            System.out.println("1. ");
+            System.out.println("1. conjuntos");
             System.out.println("2. Cuantos primos tienes?");
             System.out.println("3. Salir del programa");
             opcion = sc.nextInt();
